@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Time Warn",
+  "description": "This extension warns you that the time defined has passed",
+  "version": "1.0",
+  "options_page": "options.html",
+
+  "browser_action": {
+    "default_icon": "tomato.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "notifications",
+    "storage"
+  ]
+}
