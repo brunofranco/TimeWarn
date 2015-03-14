@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener(
   		case CONTINUE:
   			if (timeLeft == 0) {
 					notification("Time to take a break!")
+          play_sound()
           sendContMsg({command: CONTINUE, time: 0})
           timeLeft = -1
           break;
@@ -33,6 +34,11 @@ chrome.runtime.onMessage.addListener(
 // Needed to keep track of the seconds left
 function sendContMsg (message) {
 	chrome.runtime.sendMessage(message);
+}
+
+function play_sound () {
+  var audio = new Audio("glass.ogg");
+  audio.play();
 }
 
 // Creates the notification
